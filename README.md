@@ -1,10 +1,10 @@
 # CreateToDoReact
 
-# Oppgave leksjon 6
+## Oppgave leksjon 6
 
-## Denne oppgaven har til hensikt å få litt bedre erfaring med React og gjøre om vanilla.js til React. Ta utgangspunkt i vanilla todo oppgave dere leverte i Oblig 2 og gjør den om til React. Ta utgangspunkt i de samme kravene som var på Oblig 2.
+### Denne oppgaven har til hensikt å få litt bedre erfaring med React og gjøre om vanilla.js til React. Ta utgangspunkt i vanilla todo oppgave dere leverte i Oblig 2 og gjør den om til React. Ta utgangspunkt i de samme kravene som var på Oblig 2.
 
-## Jeg "scoper" navnene på komponentene nedenfor for å gjøre det mer forståelig hva komponenten skal gjøre. I mange tilfeller så har man generiske komponenter som ikke er så "satt". Eks. CompletedList kunne vært en List komponent som kunne blitt gjennbrukt til mer enn bare å liste ut Completed Todos.
+### Jeg "scoper" navnene på komponentene nedenfor for å gjøre det mer forståelig hva komponenten skal gjøre. I mange tilfeller så har man generiske komponenter som ikke er så "satt". Eks. CompletedList kunne vært en List komponent som kunne blitt gjennbrukt til mer enn bare å liste ut Completed Todos.
 
 # Krav:
 
