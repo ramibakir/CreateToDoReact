@@ -22,7 +22,7 @@
         * Skriv ut "Jippi! Ingen todos i dag"
     * Inputfelter
         * Bruke samme inputfelter som tidligere (2 poeng)
-        * Maks 50 char på "beskrivelse" (bruker state til å ha kontroll på antall   bokstaver) (1 poeng)
+        * Maks 50 char på "beskrivelse" (bruker state til å ha kontroll på antall bokstaver) (1 poeng)
     * Filter utgår men skal kunne gjøre et enkelt søkt (2 poeng)
         * Enkelt søk i listen av "completed" på tittelen
         * Dette gir øving i å filtrere en liste
