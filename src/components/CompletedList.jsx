@@ -1,7 +1,8 @@
 import React from 'react';
+import CompletedListItem from './CompletedListItem';
 import Search from './Search';
 
-const CompletedList = () => {
+const CompletedList = ({ todos }) => {
   const getData = () => {
     console.log('hello');
   };
@@ -10,12 +11,15 @@ const CompletedList = () => {
       <Search />
       <h2>Completed todos</h2>
       <table>
-        <tr>
-          <th>{title}</th>
-          <th>{author}</th>
-          <th>{description}</th>
-          <th>{completedDate}</th>
-        </tr>
+        <tbody>
+          <tr>
+            <th>{title}</th>
+            <th>{author}</th>
+            <th>{description}</th>
+            <th>{completedDate}</th>
+          </tr>
+          <CompletedListItem todos={todos} />
+        </tbody>
       </table>
     </>
   );

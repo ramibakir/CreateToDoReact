@@ -4,3 +4,35 @@ const handleOpenModal = () => setVisibility((hidden) => !hidden);
     setVisibility((visible) => !visible);
   }
   onSubmit={handleSubmit}
+
+  description: event.target.value,
+      author: event.target.value,
+
+      value={formData.author}
+      value={formData.description}
+      value={formData.title}
+
+
+      {todos && todos.length > 0 && <TodoCard />}
+
+      const todosInfo = Cards.map((todo) => <TodoCard key={todo.id} todo={todo} />);
+
+
+
+      .todoTwo {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  background-color: #c6caf1;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+}
+
+.todoThree {
+  grid-column: 3 / 3;
+  grid-row: 1;
+  background-color: #f1f6c6;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+}
+
+key={todo.id}

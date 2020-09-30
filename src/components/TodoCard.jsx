@@ -1,21 +1,31 @@
 import React, { useState } from 'react';
 
-// const todosInfo = Cards.map((todo) => <TodoCard key={todo.id} todo={todo} />);
-
-const TodoCard = ({}) => (
+const TodoCard = ({ todos, removeTodo, completeTodo }) => (
   <>
-    <article className="todoOne">
-      <h2 id="todoTitle">Hello</h2>
-      <p id="todoDescription">PLs help</p>
-      <section className="btnContainer">
-        <button type="button" id="btn-delTodo" className="btn-delTodo">
-          Delete
-        </button>
-        <button type="button" id="btn-cmpTodo" className="btn-cmpTodo">
-          Complete
-        </button>
-      </section>
-    </article>
+    {todos.map((todo) => (
+      <article className="todo" key={todo.id}>
+        <h2 id="todoTitle">{todo.title}</h2>
+        <p id="todoDescription">{todo.description}</p>
+        <section className="btnContainer">
+          <button
+            type="button"
+            id="btn-delTodo"
+            className="btn-delTodo"
+            onClick={() => removeTodo(todo.id)}
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            id="btn-cmpTodo"
+            className="btn-cmpTodo"
+            onClick={() => completeTodo(todo.id)}
+          >
+            Complete
+          </button>
+        </section>
+      </article>
+    ))}
   </>
 );
 

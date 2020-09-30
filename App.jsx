@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import CompletedList from './src/components/CompletedList';
+import CompletedList from './src/components/CompletedList';
 import Modal from './src/components/Modal';
 import Navbar from './src/components/Navbar';
 // import Search from './src/components/Search';
@@ -15,19 +15,32 @@ const App = () => {
     author: '',
   });
   const [todos, setTodos] = useState([]);
+  const [count, setCount] = useState(0);
 
-  const handleCreate = () => {
-    console.log('heiiii?');
-    setTodos((prev) => [{ id: todos.length, ...formData }, ...prev]);
+  const idCounter = () => {
+    setCount((c) => c + 1);
   };
 
   const handleVisibility = () => {
     setShowModal((visible) => !visible);
   };
 
+  const handleCreate = () => {
+    setTodos((prev) => [{ id: count, ...formData }, ...prev]);
+    idCounter();
+    handleVisibility();
+  };
+
   const removeTodo = (id) => {
     const newTodo = todos.filter((todo) => todo.id !== id);
     setTodos(newTodo);
+    const a = [1, 2, 3];
+    const b = [4, 5, 6];
+    console.log(...b, ...a);
+  };
+
+  const completeTodo = (id) => {
+    console.log('hei<3');
   };
 
   return (
@@ -43,13 +56,12 @@ const App = () => {
         />
       )}
       <TodoButton handleVisibility={handleVisibility} />
-      <TodoCardList>
-        {todos && todos.length < 1 ? (
-          <h3>No todos today :D</h3>
-        ) : (
-          <TodoCard removeTodo={removeTodo} todos={todos} />
-        )}
-      </TodoCardList>
+      <TodoCardList
+        todos={todos}
+        removeTodo={removeTodo}
+        completeTodo={completeTodo}
+      />
+      {/* <CompletedList todos={todos} /> */}
     </>
   );
 };

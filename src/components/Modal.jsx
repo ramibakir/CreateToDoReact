@@ -4,17 +4,10 @@ const Modal = ({ handleVisibility, handleCreate, setFormData, formData }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleCreate();
-    console.log(event.target.elements.newTitle.value);
-    console.log(event.target.elements.newDescription.value);
-    console.log(event.target.elements.newAuthor.value);
   };
 
   const updateValue = (event) => {
-    setFormData({
-      title: event.target.value.title,
-      description: event.target.value.description,
-      author: event.target.value.author,
-    });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
   return (
@@ -31,7 +24,7 @@ const Modal = ({ handleVisibility, handleCreate, setFormData, formData }) => {
               Exit
             </button>
           </section>
-          <form id="newTodoForm" onSubmit={handleSubmit}>
+          <form id="newTodoForm" onSubmit={handleSubmit} autoComplete="off">
             <label htmlFor="newTitle" id="formLabel">
               Title
             </label>
@@ -39,7 +32,7 @@ const Modal = ({ handleVisibility, handleCreate, setFormData, formData }) => {
               type="text"
               id="newTitle"
               placeholder="Enter title"
-              name="newTitle"
+              name="title"
               required
               value={formData.title}
               onChange={updateValue}
@@ -51,7 +44,7 @@ const Modal = ({ handleVisibility, handleCreate, setFormData, formData }) => {
             <input
               type="text"
               id="description"
-              name="newDescription"
+              name="description"
               placeholder="Enter description"
               maxLength="50"
               required
