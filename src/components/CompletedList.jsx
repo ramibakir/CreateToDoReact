@@ -1,18 +1,23 @@
 import React from 'react';
+import Search from './Search';
 
 const CompletedList = () => {
   const getData = () => {
     console.log('hello');
   };
   return (
-    <table>
-      <tr>
-        <th>{title}</th>
-        <th>{author}</th>
-        <th>{description}</th>
-        <th>{completedDate}</th>
-      </tr>
-    </table>
+    <>
+      <Search />
+      <h2>Completed todos</h2>
+      <table>
+        <tr>
+          <th>{title}</th>
+          <th>{author}</th>
+          <th>{description}</th>
+          <th>{completedDate}</th>
+        </tr>
+      </table>
+    </>
   );
 };
 

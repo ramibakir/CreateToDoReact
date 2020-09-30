@@ -1,0 +1,6 @@
+const handleOpenModal = () => setVisibility((hidden) => !hidden);
+
+  function handleCloseModal() {
+    setVisibility((visible) => !visible);
+  }
+  onSubmit={handleSubmit}
