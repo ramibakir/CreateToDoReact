@@ -1,13 +1,34 @@
 import React, { useState } from 'react';
 
-const Modal = ({ handleVisibility, handleCreate, setFormData, formData }) => {
+const Modal = ({
+  handleVisibility,
+  handleCreate,
+  setFormData,
+  formData,
+  charsLeft,
+  setCharsLeft,
+}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleCreate();
+    clearForm(event);
+  };
+
+  const charCounter = (event) => {
+    const maxChars = 50;
+
+    const currentDescription = event.target.value;
+    const currentCharacterCount = currentDescription.length;
+    setCharsLeft(maxChars - currentCharacterCount);
   };
 
   const updateValue = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  const onChangeMultipleFunctions = (event) => {
+    updateValue(event);
+    charCounter(event);
   };
 
   return (
@@ -24,7 +45,7 @@ const Modal = ({ handleVisibility, handleCreate, setFormData, formData }) => {
               Exit
             </button>
           </section>
-          <form id="newTodoForm" onSubmit={handleSubmit} autoComplete="off">
+          <form id="newTodoForm" onSubmit={handleSubmit}>
             <label htmlFor="newTitle" id="formLabel">
               Title
             </label>
@@ -39,7 +60,8 @@ const Modal = ({ handleVisibility, handleCreate, setFormData, formData }) => {
             />
 
             <label htmlFor="newDescription" id="formLabel">
-              Description
+              Description (<span id="charactersLeft">{charsLeft}</span>{' '}
+              characters left)
             </label>
             <input
               type="text"
@@ -49,7 +71,7 @@ const Modal = ({ handleVisibility, handleCreate, setFormData, formData }) => {
               maxLength="50"
               required
               value={formData.description}
-              onChange={updateValue}
+              onChange={onChangeMultipleFunctions}
             />
 
             <label htmlFor="newAuthor" id="formLabel">

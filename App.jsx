@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import CompletedList from './src/components/CompletedList';
 import Modal from './src/components/Modal';
 import Navbar from './src/components/Navbar';
 // import Search from './src/components/Search';
 import TodoButton from './src/components/TodoButton';
-import TodoCard from './src/components/TodoCard';
 import TodoCardList from './src/components/TodoCardList';
+import CompletedList from './src/components/CompletedList';
 
 const App = () => {
   const [modal, setShowModal] = useState(false);
@@ -16,6 +15,8 @@ const App = () => {
   });
   const [todos, setTodos] = useState([]);
   const [count, setCount] = useState(0);
+  const [completed, setCompleted] = useState([]);
+  const [charsLeft, setCharsLeft] = useState(50);
 
   const idCounter = () => {
     setCount((c) => c + 1);
@@ -34,13 +35,12 @@ const App = () => {
   const removeTodo = (id) => {
     const newTodo = todos.filter((todo) => todo.id !== id);
     setTodos(newTodo);
-    const a = [1, 2, 3];
-    const b = [4, 5, 6];
-    console.log(...b, ...a);
   };
 
   const completeTodo = (id) => {
-    console.log('hei<3');
+    const completedTodo = todos.filter((todo) => todo.id === id);
+    setCompleted((prev) => [...completedTodo, ...prev]);
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -53,6 +53,8 @@ const App = () => {
           handleCreate={handleCreate}
           setFormData={setFormData}
           formData={formData}
+          charsLeft={charsLeft}
+          setCharsLeft={setCharsLeft}
         />
       )}
       <TodoButton handleVisibility={handleVisibility} />
@@ -61,7 +63,7 @@ const App = () => {
         removeTodo={removeTodo}
         completeTodo={completeTodo}
       />
-      {/* <CompletedList todos={todos} /> */}
+      <CompletedList completed={completed} />
     </>
   );
 };

@@ -2,23 +2,23 @@ import React from 'react';
 import CompletedListItem from './CompletedListItem';
 import Search from './Search';
 
-const CompletedList = ({ todos }) => {
+const CompletedList = ({ completed }) => {
   const getData = () => {
     console.log('hello');
   };
   return (
     <>
-      <Search />
+      {/* <Search /> */}
       <h2>Completed todos</h2>
       <table>
         <tbody>
           <tr>
-            <th>{title}</th>
-            <th>{author}</th>
-            <th>{description}</th>
-            <th>{completedDate}</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Author</th>
+            <th>Completed date</th>
           </tr>
-          <CompletedListItem todos={todos} />
+          <CompletedListItem completed={completed} />
         </tbody>
       </table>
     </>
