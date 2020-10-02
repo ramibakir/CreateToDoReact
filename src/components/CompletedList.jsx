@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CompletedListItem from './CompletedListItem';
 import Search from './Search';
 
 const CompletedList = ({ completed }) => {
-  const getData = () => {
-    console.log('hello');
-  };
+  const [search, setSearch] = useState('');
+
   return (
     <>
-      {/* <Search /> */}
+      <Search setSearch={setSearch} />
       <h2>Completed todos</h2>
       <table>
         <tbody>
@@ -18,7 +17,7 @@ const CompletedList = ({ completed }) => {
             <th>Author</th>
             <th>Completed date</th>
           </tr>
-          <CompletedListItem completed={completed} />
+          <CompletedListItem completed={completed} search={search} />
         </tbody>
       </table>
     </>

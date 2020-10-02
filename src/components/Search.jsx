@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Search = ({ search, handleSearch }) => {
+const Search = ({ search, setSearch }) => {
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
   const handleChange = (event) => {
     handleSearch(event);
   };

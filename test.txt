@@ -36,3 +36,11 @@ const handleOpenModal = () => setVisibility((hidden) => !hidden);
 }
 
 key={todo.id}
+
+
+const date = () => {
+    const dateObject = new Date();
+    const today = `${dateObject.getDate()}/${
+      dateObject.getMonth() + 1
+    }/${dateObject.getFullYear()}`;
+  };

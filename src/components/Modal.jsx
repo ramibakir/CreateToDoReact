@@ -11,7 +11,7 @@ const Modal = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     handleCreate();
-    clearForm(event);
+    setFormData({});
   };
 
   const charCounter = (event) => {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Modal from './src/components/Modal';
 import Navbar from './src/components/Navbar';
-// import Search from './src/components/Search';
 import TodoButton from './src/components/TodoButton';
 import TodoCardList from './src/components/TodoCardList';
 import CompletedList from './src/components/CompletedList';
@@ -45,7 +44,6 @@ const App = () => {
 
   return (
     <>
-      <pre>{JSON.stringify(todos)}</pre>
       <Navbar />
       {modal && (
         <Modal
