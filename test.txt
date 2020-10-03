@@ -44,3 +44,24 @@ const date = () => {
       dateObject.getMonth() + 1
     }/${dateObject.getFullYear()}`;
   };
+
+
+  completed.map((complete) => (
+      if (searchWord === complete.title) {
+        return complete.title;
+      }
+    ))
+
+    {completed.map((complete) =>
+          complete.filter((todo) => todo.title === search)
+        )}
+
+        {completed && completed.length < 1 ? (
+          <h3>No todos today :D</h3>
+        ) : (
+          <TodoCard
+            removeTodo={removeTodo}
+            todos={todos}
+            completeTodo={completeTodo}
+          />
+        )}
