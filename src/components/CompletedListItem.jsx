@@ -12,7 +12,7 @@ const CompletedListItem = ({ completed, search }) => {
     <>
       {completed.map(
         (complete) =>
-          complete.title.includes(search) && (
+          complete.title.search(search) && (
             <tr key={complete.id}>
               <td>{complete.title}</td>
               <td>{complete.description}</td>
