@@ -51,7 +51,7 @@ const Modal = ({
             </label>
             <input
               type="text"
-              id="newTitle"
+              id="title"
               placeholder="Enter title"
               name="title"
               required
@@ -79,7 +79,7 @@ const Modal = ({
             </label>
             <input
               type="text"
-              id="newAuthor"
+              id="author"
               placeholder="Enter author"
               name="author"
               required

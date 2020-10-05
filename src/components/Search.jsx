@@ -10,12 +10,12 @@ const Search = ({ search, setSearch }) => {
   };
 
   return (
-    <section>
+    <section id="search">
       <form id="search">
         <label htmlFor="search">Search: </label>
         <input
           type="text"
-          id="search"
+          id="searchBox"
           placeholder="Title"
           onChange={handleChange}
           value={search}
